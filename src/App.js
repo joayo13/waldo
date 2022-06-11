@@ -22,7 +22,7 @@ function App() {
       </div>
       <div className='waldoBackground'>
         <div className='levelsContainer'>
-          <button className='level1' onClick={() => setLevel(<Level1/>)}>Level 1: Space</button>
+          <button className='level1' onClick={() => setLevel(<Level1 setLevel={setLevel}/>)}>Level 1: Space</button>
           <button className='level2'>Level 2: Beach</button>
           <button className='level3'>Level 3: Street</button>
         </div>
