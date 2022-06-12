@@ -17,19 +17,25 @@ function Level1(props) {
 
     const [popUp, setPopUp] = useState()
 
+    const [waldoSelected, setWaldoSelected] = useState(false)
+
+    const [wizardSelected, setWizardSelected] = useState(false)
+
     const isCoordCorrect = (character) => {
       if(character === 'waldo') {
         if(coords[0] < mockWaldoCoords[0] + 2 && coords[0] > mockWaldoCoords[0] - 2 && coords[1] < mockWaldoCoords[1] + 2 && coords[1] > mockWaldoCoords[1] - 2) {
-          alert('waldo selected')
+          setWaldoSelected(true)
+          setPopUp(null)
         } else {
-          alert('fuck you')
+          setPopUp(null)
         }
       }
       if(character === 'wizard') {
         if(coords[0] < mockWizardCoords[0] + 2 && coords[0] > mockWizardCoords[0] - 2 && coords[1] < mockWizardCoords[1] + 2 && coords[1] > mockWizardCoords[1] - 2) {
-          alert('wizard selected')
+          setWizardSelected(true)
+          setPopUp(null)
         } else {
-          alert('fuck you')
+          setPopUp(null)
         }
       }
      }
@@ -38,7 +44,6 @@ function Level1(props) {
         let xCoords = Math.round((e.nativeEvent.offsetX / e.nativeEvent.target.offsetWidth) * 100)
         let yCoords = Math.round((e.nativeEvent.offsetY / e.nativeEvent.target.offsetHeight) * 100)
         coords = [xCoords, yCoords]
-        alert(`${xCoords}, ${yCoords}`)
     }
 
     const popUpHandler = (e) => {
@@ -69,8 +74,8 @@ function Level1(props) {
     <div className='levelBackground'>
       <div className='charactersHeader'>
       <button className='backButton' onClick={() => props.setLevel(undefined)}>EXIT</button>
-        <img className='charactersIcon' src={waldo}></img>
-        <img className='charactersIcon' src={wizard}></img>
+        <div className='charactersIconWaldo' style={ waldoSelected ? {backgroundColor: 'rgba(0, 0, 0, 0.500)'} : null}></div>
+        <div className='charactersIconWizard' style={ wizardSelected ? {backgroundColor: 'rgba(0, 0, 0, 0.500)'} : null}></div>
       </div>
       {popUp}
         <img className='levelImage' src={levelPicture} onClick={(e) => {coordHandler(e); popUpHandler(e)}}></img>
