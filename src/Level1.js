@@ -1,5 +1,6 @@
-import {React, useState} from 'react'
+import {React, useEffect, useState} from 'react'
 import './Level.css'
+import LevelComplete from './LevelComplete'
 
 const levelPicture = require('./level1.jpg')
 
@@ -20,6 +21,14 @@ function Level1(props) {
     const [waldoSelected, setWaldoSelected] = useState(false)
 
     const [wizardSelected, setWizardSelected] = useState(false)
+
+    const [levelComplete, setLevelComplete] = useState(false)
+
+    useEffect(() => {
+      if (waldoSelected && wizardSelected) {
+        setLevelComplete(true)
+      }
+    })
 
     const isCoordCorrect = (character) => {
       if(character === 'waldo') {
@@ -71,6 +80,8 @@ function Level1(props) {
     }
 
   return (
+    <>
+    {!levelComplete ? 
     <div className='levelBackground'>
       <div className='charactersHeader'>
       <button className='backButton' onClick={() => props.setLevel(undefined)}>EXIT</button>
@@ -79,7 +90,8 @@ function Level1(props) {
       </div>
       {popUp}
         <img className='levelImage' src={levelPicture} onClick={(e) => {coordHandler(e); popUpHandler(e)}}></img>
-    </div>
+    </div> : <LevelComplete level={1}/>}
+    </>
   )
 }
 
