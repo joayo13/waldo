@@ -12,6 +12,10 @@ const mockWaldoCoords = [1, 87]
 
 const mockWizardCoords = [41, 58]
 
+let startTime = null
+
+let finalTime = null
+
 let coords = []
 
 function Level1(props) {
@@ -26,6 +30,8 @@ function Level1(props) {
 
     useEffect(() => {
       if (waldoSelected && wizardSelected) {
+        let endTime = new Date() / 1000
+        finalTime = endTime - startTime
         setLevelComplete(true)
       }
     })
@@ -89,8 +95,8 @@ function Level1(props) {
         <div className='charactersIconWizard' style={ wizardSelected ? {backgroundColor: 'rgba(0, 0, 0, 0.500)'} : null}></div>
       </div>
       {popUp}
-        <img className='levelImage' src={levelPicture} onClick={(e) => {coordHandler(e); popUpHandler(e)}}></img>
-    </div> : <LevelComplete level={1}/>}
+        <img className='levelImage' src={levelPicture} onLoad={() => startTime = new Date / 1000} onClick={(e) => {coordHandler(e); popUpHandler(e)}}></img>
+    </div> : <LevelComplete level={1} timeScore={finalTime}/>}
     </>
   )
 }
