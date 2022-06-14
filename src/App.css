@@ -53,6 +53,7 @@ p {
   border: none;
   text-shadow: 0px 0px 4px #000000;
   color: yellowgreen;
+  text-decoration: underline;
 }
 .level2 {
   color: white;
@@ -65,6 +66,7 @@ p {
   background-size: cover;
   text-shadow: 0px 0px 4px #000000;
   color: gold;
+  text-decoration: underline;
 }
 .level3 {
   width: 500px;
@@ -74,7 +76,8 @@ p {
   background-size: cover;
   border: none;
   text-shadow: 0px 0px 4px #000000;
-  color: blue;
+  color: rgb(0, 228, 245);
+  text-decoration: underline;
 }
 .mainHeaderSubtext {
   width: 500px;
