@@ -36,7 +36,9 @@ function Level2(props) {
 
     useEffect(() => {
       if (waldoSelected && wizardSelected && odlawSelected) {
-        let endTime = new Date().getSeconds()
+        let endTime = Math.round(new Date() / 1000, 2)
+        console.log(startTime)
+        console.log(endTime)
         finalTime = endTime - startTime
         setLevelComplete(true)
       }
@@ -113,8 +115,8 @@ function Level2(props) {
         <div className='charactersIconOdlaw' style={ odlawSelected ? {backgroundColor: 'rgba(0, 0, 0, 0.500)'} : null}></div>
       </div>
       {popUp}
-        <img className='levelImage' src={levelPicture} onLoad={() => startTime = new Date().getSeconds()} onClick={(e) => {coordHandler(e); popUpHandler(e)}}></img>
-    </div> : <LevelComplete level={1} timeScore={finalTime}/>}
+        <img className='levelImage' src={levelPicture} onLoad={() => startTime = Math.round(new Date() / 1000, 2)} onClick={(e) => {coordHandler(e); popUpHandler(e)}}></img>
+    </div> : <LevelComplete level={2} timeScore={finalTime}/>}
     </>
   )
 }
