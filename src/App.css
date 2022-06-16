@@ -58,7 +58,7 @@ p {
 .level2 {
   color: white;
   border: none;
-  border-top: 1px solid black;
+  border-top: 2px solid black;
   width: 500px;
   font-family: 'Belleza', sans-serif;
   font-size: 50px;
@@ -75,8 +75,9 @@ p {
   background-image: url('./level3.jpg');
   background-size: cover;
   border: none;
+  border-top: 2px solid black;
   text-shadow: 0px 0px 4px #000000;
-  color: rgb(0, 228, 245);
+  color: rgb(255, 168, 248);
   text-decoration: underline;
 }
 .mainHeaderSubtext {

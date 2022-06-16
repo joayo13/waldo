@@ -4,6 +4,7 @@ import { useState } from 'react';
 import './App.css';
 import Level1 from './Level1';
 import Level2 from './Level2';
+import Level3 from './Level3';
 
 
 
@@ -25,7 +26,7 @@ function App() {
         <div className='levelsContainer'>
           <button className='level1' onClick={() => setLevel(<Level1 setLevel={setLevel}/>)}>Level 1: Space</button>
           <button className='level2' onClick={() => setLevel(<Level2 setLevel={setLevel}/>)}>Level 2: Beach</button>
-          <button className='level3'>Level 3: Street</button>
+          <button className='level3' onClick={() => setLevel(<Level3 setLevel={setLevel}/>)}>Level 3: Carnival</button>
         </div>
         
       </div>

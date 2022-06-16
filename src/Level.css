@@ -89,6 +89,7 @@
     max-height: 25px;
     font-size: 18px;
     border: none;
+    border-top: 1px solid grey;
     width: 100px;
     border-radius: 0px;
     color: white;
