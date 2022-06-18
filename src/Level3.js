@@ -8,9 +8,9 @@ const waldo = require('./waldo.jpg')
 
 const odlaw = require('./odlaw.jpg')
 
-const mockWaldoCoords = [80, 10]
+const mockWaldoCoords = [80, 11]
 
-const mockOdlawCoords = [5, 77]
+const mockOdlawCoords = [5, 78]
 
 let startTime = null
 
@@ -40,7 +40,7 @@ function Level3(props) {
 
     const isCoordCorrect = (character) => {
       if(character === 'waldo') {
-        if(coords[0] < mockWaldoCoords[0] + 2 && coords[0] > mockWaldoCoords[0] - 2 && coords[1] < mockWaldoCoords[1] + 2 && coords[1] > mockWaldoCoords[1] - 2) {
+        if(coords[0] < mockWaldoCoords[0] + 3 && coords[0] > mockWaldoCoords[0] - 3 && coords[1] < mockWaldoCoords[1] + 2 && coords[1] > mockWaldoCoords[1] - 2) {
           setWaldoSelected(true)
           setPopUp(null)
         } else {
@@ -48,7 +48,7 @@ function Level3(props) {
         }
       }
       if(character === 'odlaw') {
-        if(coords[0] < mockOdlawCoords[0] + 2 && coords[0] > mockOdlawCoords[0] - 2 && coords[1] < mockOdlawCoords[1] + 2 && coords[1] > mockOdlawCoords[1] - 2) {
+        if(coords[0] < mockOdlawCoords[0] + 3 && coords[0] > mockOdlawCoords[0] - 3 && coords[1] < mockOdlawCoords[1] + 2 && coords[1] > mockOdlawCoords[1] - 2) {
           setOdlawSelected(true)
           setPopUp(null)
         } else {

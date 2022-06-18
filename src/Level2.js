@@ -10,9 +10,9 @@ const wizard = require('./wizard.png')
 
 const odlaw = require('./odlaw.jpg')
 
-const mockWaldoCoords = [53, 49]
+const mockWaldoCoords = [54, 49]
 
-const mockWizardCoords = [63, 49]
+const mockWizardCoords = [63, 50]
 
 const mockOdlawCoords = [25, 49]
 
@@ -46,7 +46,7 @@ function Level2(props) {
 
     const isCoordCorrect = (character) => {
       if(character === 'waldo') {
-        if(coords[0] < mockWaldoCoords[0] + 2 && coords[0] > mockWaldoCoords[0] - 2 && coords[1] < mockWaldoCoords[1] + 2 && coords[1] > mockWaldoCoords[1] - 2) {
+        if(coords[0] < mockWaldoCoords[0] + 3 && coords[0] > mockWaldoCoords[0] - 3 && coords[1] < mockWaldoCoords[1] + 3 && coords[1] > mockWaldoCoords[1] - 3) {
           setWaldoSelected(true)
           setPopUp(null)
         } else {
@@ -54,7 +54,7 @@ function Level2(props) {
         }
       }
       if(character === 'wizard') {
-        if(coords[0] < mockWizardCoords[0] + 2 && coords[0] > mockWizardCoords[0] - 2 && coords[1] < mockWizardCoords[1] + 2 && coords[1] > mockWizardCoords[1] - 2) {
+        if(coords[0] < mockWizardCoords[0] + 3 && coords[0] > mockWizardCoords[0] - 3 && coords[1] < mockWizardCoords[1] + 3 && coords[1] > mockWizardCoords[1] - 3) {
           setWizardSelected(true)
           setPopUp(null)
         } else {
@@ -62,7 +62,7 @@ function Level2(props) {
         }
       }
       if(character === 'odlaw') {
-        if(coords[0] < mockOdlawCoords[0] + 2 && coords[0] > mockOdlawCoords[0] - 2 && coords[1] < mockOdlawCoords[1] + 2 && coords[1] > mockOdlawCoords[1] - 2) {
+        if(coords[0] < mockOdlawCoords[0] + 3 && coords[0] > mockOdlawCoords[0] - 3 && coords[1] < mockOdlawCoords[1] + 2 && coords[1] > mockOdlawCoords[1] - 2) {
           setOdlawSelected(true)
           setPopUp(null)
         } else {
