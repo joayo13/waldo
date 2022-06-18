@@ -1,0 +1,64 @@
+.mainBodyLeaderboards {
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-family: 'Belleza', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
+.leaderboardsLevel1Button {
+    width: 250px;
+    height: 75px;
+    font-family: 'Belleza', sans-serif;
+    font-size: 50px;
+    background-image: url('./level1.jpg');
+    background-size: cover;
+    border: none;
+    text-shadow: 0px 0px 4px #000000;
+    color: yellowgreen;
+    text-decoration: underline;
+}
+.leaderboardsLevel2Button {
+    width: 250px;
+    height: 75px;
+    font-family: 'Belleza', sans-serif;
+    font-size: 50px;
+    background-image: url('./level2.jpg');
+    background-size: cover;
+    border: none;
+    text-shadow: 0px 0px 4px #000000;
+    color: gold;
+    text-decoration: underline;    
+}
+.leaderboardsLevel3Button {
+    width: 250px;
+    height: 75px;
+    font-family: 'Belleza', sans-serif;
+    font-size: 50px;
+    background-image: url('./level3.jpg');
+    background-size: cover;
+    border: none;
+    text-shadow: 0px 0px 4px #000000;
+    color: rgb(255, 168, 248);
+    text-decoration: underline;
+}
+.backToHome {
+    position: absolute;
+    z-index: 999;
+    left: 10px;
+    top: 10px;
+    background-color: red;
+    color: white;
+    height: 40px;
+    width: 60px;
+    font-size: 20px;
+    border-radius: 2px;
+    font-family: 'Belleza', sans-serif;
+}
