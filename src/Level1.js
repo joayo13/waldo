@@ -1,16 +1,35 @@
 import {React, useEffect, useState} from 'react'
 import './Level.css'
 import LevelComplete from './LevelComplete'
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyC9HyiBkghaSfj9AgjtLI0JmmtK39MikT8",
+
+  authDomain: "waldo-4ca82.firebaseapp.com",
+
+  projectId: "waldo-4ca82",
+
+  storageBucket: "waldo-4ca82.appspot.com",
+
+  messagingSenderId: "526810001943",
+
+  appId: "1:526810001943:web:e23c54af8eccc767cd2252"
+
+};
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
 
 const levelPicture = require('./level1.jpg')
 
 const waldo = require('./waldo.jpg')
 
 const wizard = require('./wizard.png')
-
-const mockWaldoCoords = [1, 88]
-
-const mockWizardCoords = [41, 59]
 
 let startTime = null
 
@@ -36,22 +55,22 @@ function Level1(props) {
       }
     })
 
-    const isCoordCorrect = (character) => {
+     async function isCoordCorrect(character) {
       if(character === 'waldo') {
-        if(coords[0] < mockWaldoCoords[0] + 3 && coords[0] > mockWaldoCoords[0] - 3 && coords[1] < mockWaldoCoords[1] + 3 && coords[1] > mockWaldoCoords[1] - 3) {
-          setWaldoSelected(true)
-          setPopUp(null)
-        } else {
-          setPopUp(null)
+        const querySnapshot = await getDocs(collection(db, 'level1'))
+        if(querySnapshot) {
+          let waldoCoords = []
+          querySnapshot.forEach((doc) => doc.id === 'waldo' ? waldoCoords = [doc.data().x, doc.data().y] : null)
+          if(coords[0] < waldoCoords[0] + 2 && coords[0] > waldoCoords[0] - 2 && coords[1] < waldoCoords[1] + 2 && coords[1] > waldoCoords[1] - 2) {
+            setWaldoSelected(true)
+            setPopUp(null)
+          } else {
+            setPopUp(null)
+          }
         }
       }
       if(character === 'wizard') {
-        if(coords[0] < mockWizardCoords[0] + 3 && coords[0] > mockWizardCoords[0] - 3 && coords[1] < mockWizardCoords[1] + 3 && coords[1] > mockWizardCoords[1] - 3) {
-          setWizardSelected(true)
-          setPopUp(null)
-        } else {
-          setPopUp(null)
-        }
+        
       }
      }
 
