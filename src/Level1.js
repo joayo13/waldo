@@ -70,7 +70,17 @@ function Level1(props) {
         }
       }
       if(character === 'wizard') {
-        
+        const querySnapshot = await getDocs(collection(db, 'level1'))
+        if(querySnapshot) {
+          let wizardCoords = []
+          querySnapshot.forEach((doc) => doc.id === 'wizard' ? wizardCoords = [doc.data().x, doc.data().y] : null)
+          if(coords[0] < wizardCoords[0] + 2 && coords[0] > wizardCoords[0] - 2 && coords[1] < wizardCoords[1] + 2 && coords[1] > wizardCoords[1] - 2) {
+            setWizardSelected(true)
+            setPopUp(null)
+          } else {
+            setPopUp(null)
+          }
+        }
       }
      }
 
