@@ -13,9 +13,9 @@
     top: 5px;
     background-color: red;
     color: white;
-    height: 80px;
-    width: 80px;
-    font-size: 30px;
+    height: 40px;
+    width: 60px;
+    font-size: 20px;
     border-radius: 2px;
     font-family: 'Belleza', sans-serif;
 }
@@ -34,8 +34,8 @@
 }
 .charactersIconWaldo {
     border-radius: 50%;
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     background-image: url('./waldo.jpg');
     background-size: cover;
     background-position: 20%;
@@ -43,8 +43,8 @@
 }
 .charactersIconWizard {
     border-radius: 50%;
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     background-image: url('./wizard.png');
     background-size: cover;
     background-position: 20%;
@@ -52,8 +52,8 @@
 }
 .charactersIconOdlaw {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-image: url('./odlaw.jpg');
     background-size: cover;
     background-position: 20%;
