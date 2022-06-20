@@ -21,11 +21,12 @@ function App() {
     <div className="App">
       <div className='mainHeader'>
         <h1>Where's Waldo?</h1>
-        <button className='highscoresButton' onClick={() => {setShowHighscores(true)}}>Highscores</button>
+        
         <p style={{marginTop: '20px'}} className='mainHeaderSubtext'>
         Find Waldo and his friends to win. You'll be timed once you start a level. <span style={{color: '#77b255'}}>Good luck ☘️</span>
         </p>
       </div>
+      <button className='highscoresButton' onClick={() => {setShowHighscores(true)}}>Highscores</button>
       <div className='waldoBackground'>
         <div className='levelsContainer'>
           <button className='level1' onClick={() => setLevel(<Level1 setLevel={setLevel}/>)}>Level 1: Space</button>

@@ -42,6 +42,8 @@ function Leaderboards(props) {
 
     
     async function getScores() {
+
+        highScores = []
         
         const querySnapshot = await getDocs(collection(db, `level${level}highscores`))
         querySnapshot.forEach((doc) => {
@@ -65,21 +67,21 @@ function Leaderboards(props) {
                 setHighscorePopUp(<div className='mainBodyLeaderboards'>
                     <h1>Level 1</h1>
                     <button className='backToHome' onClick={() => setBackToHome(true)}>EXIT</button>
-                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px'} : {width: '250px', color: 'green'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
+                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px', fontSize: '22px'} : {width: '250px', color: 'green', fontSize: '30px'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
                 </div>)
             }
             if(level === 2) {
                 setHighscorePopUp(<div className='mainBodyLeaderboards'>
                     <h1>Level 2</h1>
                     <button className='backToHome' onClick={() => setBackToHome(true)}>EXIT</button>
-                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px'} : {width: '250px', color: 'green'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
+                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px', fontSize: '22px'} : {width: '250px', color: 'green', fontSize: '30px'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
                 </div>)
             }
             if(level === 3) {
                 setHighscorePopUp(<div className='mainBodyLeaderboards'>
                     <h1>Level 3</h1>
                     <button className='backToHome' onClick={() => setBackToHome(true)}>EXIT</button>
-                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px'} : {width: '250px', color: 'green'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
+                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px', fontSize: '22px'} : {width: '250px', color: 'green', fontSize: '30px'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
                 </div>)
             }
     },[level, scoresLoaded])
