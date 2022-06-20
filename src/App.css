@@ -30,6 +30,18 @@ p {
   width: 100%;
   min-height: 1000px;
 }
+.highscoresButton {
+  position: absolute;
+  top: 130px;
+  right: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(19, 19, 19);
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Belleza', sans-serif;
+}
 .levelsContainer {
   cursor: pointer;
   display: flex;

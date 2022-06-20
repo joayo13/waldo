@@ -35,45 +35,53 @@ function Leaderboards(props) {
         if(props.level) {
             setLevel(props.level)
         }
+        return () => {
+            highScores = []
+        }
     },[])
 
     
-
     async function getScores() {
         
-        const querySnapshot = await getDocs(collection(db, `level${props.level}highscores`))
+        const querySnapshot = await getDocs(collection(db, `level${level}highscores`))
         querySnapshot.forEach((doc) => {
             if(highScores.length < 10) {
                 highScores.push({name: doc.id, score: doc.data().score})
+            } if(highScores.length === 10 || querySnapshot.docs.length < 10) {
+                console.log('yop')
+                highScores.sort((a, b) => a.score - b.score);
+                setScoresLoaded(true)
+                return
             }
         }) 
-        console.log(highScores)
-        highScores.sort((a, b) => a.score - b.score);
-        setScoresLoaded(true)
     } 
     useEffect(() => {
-        getScores()
-    },[])
+            getScores()
+    },[level])
 
     useEffect(() => {
-        if(level === 1) {
+            if(level === 1) {
             
-            setHighscorePopUp(<div className='mainBodyLeaderboards'>
-                <h1>Level 1</h1>
-                <button className='backToHome' onClick={() => setBackToHome(true)}>EXIT</button>
-                {highScores.map((obj) => <div style={{width: '250px'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
-            </div>)
-        }
-        if(level === 2) {
-            setHighscorePopUp(<div className='mainBodyLeaderboards'>
-                <h1>Level 2</h1>
-            </div>)
-        }
-        if(level === 3) {
-            setHighscorePopUp(<div className='mainBodyLeaderboards'>
-                <h1>Level 3</h1>
-            </div>)
-        }
+                setHighscorePopUp(<div className='mainBodyLeaderboards'>
+                    <h1>Level 1</h1>
+                    <button className='backToHome' onClick={() => setBackToHome(true)}>EXIT</button>
+                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px'} : {width: '250px', color: 'green'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
+                </div>)
+            }
+            if(level === 2) {
+                setHighscorePopUp(<div className='mainBodyLeaderboards'>
+                    <h1>Level 2</h1>
+                    <button className='backToHome' onClick={() => setBackToHome(true)}>EXIT</button>
+                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px'} : {width: '250px', color: 'green'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
+                </div>)
+            }
+            if(level === 3) {
+                setHighscorePopUp(<div className='mainBodyLeaderboards'>
+                    <h1>Level 3</h1>
+                    <button className='backToHome' onClick={() => setBackToHome(true)}>EXIT</button>
+                    {highScores.map((obj) => <div style={highScores.indexOf(obj) !== 0 ? {width: '250px'} : {width: '250px', color: 'green'}}>{`${highScores.indexOf(obj) + 1}. ${obj.name}: ${obj.score} seconds`}</div>)}
+                </div>)
+            }
     },[level, scoresLoaded])
   return (
     <>

@@ -12,13 +12,16 @@ import Level3 from './Level3';
 function App() {
 
   const [level, setLevel] = useState()
-
+  const [showHighscores, setShowHighscores] = useState(null)
   return (
+    <>
+    {showHighscores ? <Leaderboards/> : 
     <>
     {!level ? 
     <div className="App">
       <div className='mainHeader'>
         <h1>Where's Waldo?</h1>
+        <button className='highscoresButton' onClick={() => {setShowHighscores(true)}}>Highscores</button>
         <p style={{marginTop: '20px'}} className='mainHeaderSubtext'>
         Find Waldo and his friends to win. You'll be timed once you start a level. <span style={{color: '#77b255'}}>Good luck ☘️</span>
         </p>
@@ -32,6 +35,7 @@ function App() {
         
       </div>
     </div> : level}
+    </>}
     </>
   );
 }
