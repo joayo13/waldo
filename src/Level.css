@@ -13,13 +13,14 @@
     top: 5px;
     background-color: red;
     color: white;
-    height: 40px;
-    width: 60px;
-    font-size: 20px;
+    height: 50px;
+    width: 70px;
+    font-size: 30px;
     border-radius: 2px;
     font-family: 'Belleza', sans-serif;
 }
 .levelImage {
+    margin-top: 100px;
     width: 800px;
 }
 .charactersHeader {
@@ -34,8 +35,8 @@
 }
 .charactersIconWaldo {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-image: url('./waldo.jpg');
     background-size: cover;
     background-position: 20%;
@@ -43,8 +44,8 @@
 }
 .charactersIconWizard {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-image: url('./wizard.png');
     background-size: cover;
     background-position: 20%;
@@ -52,8 +53,8 @@
 }
 .charactersIconOdlaw {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-image: url('./odlaw.jpg');
     background-size: cover;
     background-position: 20%;
@@ -61,14 +62,15 @@
 }
 .charactersIconSelector {
     justify-self: flex-end;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
 }
 .popUpCircle {
     position: absolute;
     height: 25px;
     width: 25px;
     background-color: rgba(0, 0, 0, 0.500);
+    border-radius: 100%;
     border: 1px dashed white;
 }
 .popUpCharacterSelectorContainer {
@@ -86,8 +88,8 @@
     display: flex;
     font-family: 'Belleza', sans-serif;
     justify-content: space-evenly;
-    max-height: 25px;
-    font-size: 18px;
+    max-height: 30px;
+    font-size: 22px;
     border: none;
     border-top: 1px solid grey;
     width: 100px;
@@ -99,4 +101,5 @@
     .levelImage {
         width: 360px;
     }
+    
 }

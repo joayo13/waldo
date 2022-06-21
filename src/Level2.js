@@ -72,7 +72,7 @@ function Level2(props) {
         if(querySnapshot) {
           let waldoCoords = []
           querySnapshot.forEach((doc) => doc.id === 'waldo' ? waldoCoords = [doc.data().x, doc.data().y] : null)
-          if(coords[0] < waldoCoords[0] + 2 && coords[0] > waldoCoords[0] - 2 && coords[1] < waldoCoords[1] + 2 && coords[1] > waldoCoords[1] - 2) {
+          if(coords[0] < waldoCoords[0] + 3 && coords[0] > waldoCoords[0] - 3 && coords[1] < waldoCoords[1] + 3 && coords[1] > waldoCoords[1] - 3) {
             setWaldoSelected(true)
             setPopUp(null)
           } else {
@@ -85,7 +85,7 @@ function Level2(props) {
         if(querySnapshot) {
           let wizardCoords = []
           querySnapshot.forEach((doc) => doc.id === 'wizard' ? wizardCoords = [doc.data().x, doc.data().y] : null)
-          if(coords[0] < wizardCoords[0] + 2 && coords[0] > wizardCoords[0] - 2 && coords[1] < wizardCoords[1] + 2 && coords[1] > wizardCoords[1] - 2) {
+          if(coords[0] < wizardCoords[0] + 3 && coords[0] > wizardCoords[0] - 3 && coords[1] < wizardCoords[1] + 3 && coords[1] > wizardCoords[1] - 3) {
             setWizardSelected(true)
             setPopUp(null)
           } else {
@@ -98,7 +98,7 @@ function Level2(props) {
         if(querySnapshot) {
           let odlawCoords = []
           querySnapshot.forEach((doc) => doc.id === 'odlaw' ? odlawCoords = [doc.data().x, doc.data().y] : null)
-          if(coords[0] < odlawCoords[0] + 2 && coords[0] > odlawCoords[0] - 2 && coords[1] < odlawCoords[1] + 2 && coords[1] > odlawCoords[1] - 2) {
+          if(coords[0] < odlawCoords[0] + 3 && coords[0] > odlawCoords[0] - 3 && coords[1] < odlawCoords[1] + 3 && coords[1] > odlawCoords[1] - 3) {
             setOdlawSelected(true)
             setPopUp(null)
           } else {
@@ -118,8 +118,8 @@ function Level2(props) {
       if(coords[0] <= 50) {
         setPopUp(
           <div className='popUpContainer'>
-            <div className='popUpCircle' style={{top: `${(e.nativeEvent.offsetY - 12.5)}px`, left: `${e.nativeEvent.x - 12.5}px`}}></div>
-            <div className='popUpCharacterSelectorContainer' style={{top: `${(e.nativeEvent.offsetY - 12.5)}px`, left: `${e.nativeEvent.x + 25}px`}}>
+            <div className='popUpCircle' style={{top: `${((e.nativeEvent.offsetY + 100) - 12.5)}px`, left: `${e.nativeEvent.x - 12.5}px`}}></div>
+            <div className='popUpCharacterSelectorContainer' style={{top: `${((e.nativeEvent.offsetY + 100) - 12.5)}px`, left: `${e.nativeEvent.x + 25}px`}}>
               <button className='popUpCharacterSelectorButton' onClick={() => isCoordCorrect('waldo')} style={{backgroundColor: 'white', color: 'black'}}>Waldo<img className='charactersIconSelector' src={waldo}></img></button>
               <button className='popUpCharacterSelectorButton' onClick={() => isCoordCorrect('wizard')} style={{backgroundColor: '#68b3dd', color: 'black'}}>Wizard<img className='charactersIconSelector' src={wizard}></img></button>
               <button className='popUpCharacterSelectorButton' onClick={() => isCoordCorrect('odlaw')} style={{backgroundColor: 'white', color: 'black'}}>Odlaw<img className='charactersIconSelector' src={odlaw}></img></button>
@@ -129,8 +129,8 @@ function Level2(props) {
       if(coords[0] > 50) {
         setPopUp(
           <div className='popUpContainer'>
-            <div className='popUpCircle' style={{top: `${(e.nativeEvent.offsetY - 12.5)}px`, left: `${e.nativeEvent.x - 12.5}px`}}></div>
-            <div className='popUpCharacterSelectorContainer' style={{top: `${(e.nativeEvent.offsetY - 12.5)}px`, left: `${e.nativeEvent.x - 120}px`}}>
+            <div className='popUpCircle' style={{top: `${((e.nativeEvent.offsetY + 100) - 12.5)}px`, left: `${e.nativeEvent.x - 12.5}px`}}></div>
+            <div className='popUpCharacterSelectorContainer' style={{top: `${((e.nativeEvent.offsetY + 100) - 12.5)}px`, left: `${e.nativeEvent.x - 120}px`}}>
               <button className='popUpCharacterSelectorButton' onClick={() => isCoordCorrect('waldo')}style={{backgroundColor: 'white', color: 'black'}}>Waldo<img className='charactersIconSelector' src={waldo}></img></button>
               <button className='popUpCharacterSelectorButton' onClick={() => isCoordCorrect('wizard')} style={{backgroundColor: '#68b3dd', color: 'black'}}>Wizard<img className='charactersIconSelector' src={wizard}></img></button>
               <button className='popUpCharacterSelectorButton' onClick={() => isCoordCorrect('odlaw')} style={{backgroundColor: 'white', color: 'black'}}>Odlaw<img className='charactersIconSelector' src={odlaw}></img></button>
