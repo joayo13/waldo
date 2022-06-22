@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Leaderboards from './Leaderboards'
 import './levelComplete.css'
 import { initializeApp } from "firebase/app";
@@ -28,6 +28,10 @@ function LevelComplete(props) {
   const [submitted, setSubmitted] = useState(null)
 
   const [name, setName] = useState('')
+
+  useEffect(() => {
+    window.document.body.style.zoom = 1;
+  },[])
 
   async function submitScore() {
     console.log(name)
