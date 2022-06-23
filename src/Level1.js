@@ -27,29 +27,29 @@ const db = getFirestore(app);
 
 const levelPicture = require('./level1.jpg')
 
-const waldo = require('./waldo.jpg')
+const waldo = require('./waldo.jpg');
 
-const wizard = require('./wizard.png')
+const wizard = require('./wizard.png');
 
-let startTime = null
+let startTime = null;
 
-let finalTime = null
+let finalTime = null;
 
 let coords = []
 
 function Level1(props) {
 
-    const [popUp, setPopUp] = useState()
+    const [popUp, setPopUp] = useState();
 
-    const [waldoSelected, setWaldoSelected] = useState(false)
+    const [waldoSelected, setWaldoSelected] = useState(false);
 
-    const [wizardSelected, setWizardSelected] = useState(false)
+    const [wizardSelected, setWizardSelected] = useState(false);
 
-    const [levelComplete, setLevelComplete] = useState(false)
+    const [levelComplete, setLevelComplete] = useState(false);
 
     useEffect(() => {
       if (waldoSelected && wizardSelected) {
-        let endTime = Math.round(new Date() / 1000, 2)
+        const endTime = Math.round(new Date() / 1000, 2)
         finalTime = endTime - startTime
         setLevelComplete(true)
       }
@@ -86,7 +86,7 @@ function Level1(props) {
 
     const coordHandler = (e) => {
         let xCoords = Math.round((e.nativeEvent.offsetX / e.nativeEvent.target.offsetWidth) * 100)
-        let yCoords = Math.round((e.nativeEvent.offsetY / e.nativeEvent.target.offsetHeight) * 100)
+        const yCoords = Math.round((e.nativeEvent.offsetY / e.nativeEvent.target.offsetHeight) * 100)
         coords = [xCoords, yCoords]
     }
 
@@ -128,6 +128,6 @@ function Level1(props) {
     </div> : <LevelComplete level={1} timeScore={finalTime}/>}
     </>
   )
-}
+};
 
-export default Level1
+export default Level1;

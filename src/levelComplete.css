@@ -12,13 +12,16 @@
     justify-content: center;
     flex-wrap: wrap;
     border-radius: 5px;
+    font-size: 20px;
 }
 .nameInput {
     font-family: 'Belleza', sans-serif;
+    border-radius: 5px;
 }
 .submitScoreButton {
     font-family: 'Belleza', sans-serif;
     background-color: white;
     border: none;
     border-radius: 5px;
+    font-size: 18px;
 }
